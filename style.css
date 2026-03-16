@@ -1,0 +1,76 @@
+body{
+    background-color: #AEB784;
+    color: #41431B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    
+h3{
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+  
+
+#click-button{
+    background-color: #E3DBBB;
+    border-radius: 10px;
+    width: 200px;
+    height: 70px;   
+    font-size: 2rem;
+    border: none;   
+    cursor: pointer;
+    margin-top: 300px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#click-button:hover{
+    background-color: #F8F3E1;
+    cursor: pointer;
+    scale: 1.1;
+}
+
+#click-button:active{
+    background-color: #E3DBBB;
+    cursor: pointer;
+    scale: 0.9;
+}
+
+#reset-button{
+    background-color: #E3DBBB;
+    border-radius: 10px;
+    width: 150px;
+    height: 70px;   
+    font-size: 2rem;
+    border: none;   
+    cursor: pointer;
+    margin-top: 300px;
+    margin-top: -500px;
+    margin-left: 1050px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#reset-button:hover{
+    background-color: #F8F3E1;
+    cursor: pointer;
+    scale: 1.1;
+}
+
+#reset-button:active{
+    background-color: #E3DBBB;
+    cursor: pointer;
+    scale: 0.9;
+}
+
+.game-layout{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+.game-area{
+    text-align: center;
+}
