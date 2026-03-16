@@ -1,10 +1,6 @@
 body{
     background-color: #AEB784;
     color: #41431B;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
     
 h3{
@@ -21,7 +17,6 @@ h3{
     font-size: 2rem;
     border: none;   
     cursor: pointer;
-    margin-top: 300px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -29,12 +24,14 @@ h3{
     background-color: #F8F3E1;
     cursor: pointer;
     scale: 1.1;
+    transition: all 0.2s ease-in-out;
 }
 
 #click-button:active{
     background-color: #E3DBBB;
     cursor: pointer;
     scale: 0.9;
+    transition: all 0.1s ease-in-out;
 }
 
 #reset-button{
@@ -45,9 +42,6 @@ h3{
     font-size: 2rem;
     border: none;   
     cursor: pointer;
-    margin-top: 300px;
-    margin-top: -500px;
-    margin-left: 1050px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -55,12 +49,14 @@ h3{
     background-color: #F8F3E1;
     cursor: pointer;
     scale: 1.1;
+    transition: all 0.2s ease-in-out;
 }
 
 #reset-button:active{
     background-color: #E3DBBB;
     cursor: pointer;
     scale: 0.9;
+    transition: all 0.2s ease-in-out;
 }
 
 .game-layout{
@@ -73,4 +69,12 @@ h3{
 
 .game-area{
     text-align: center;
+}
+
+.shop-item{
+    background-color: #E3DBBB;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
