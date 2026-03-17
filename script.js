@@ -21,6 +21,7 @@ function resetGame(){
 resetButton.addEventListener('click', resetGame);
 
 
+//Shop
 const shopItems = [
     {
         name: "Money",
@@ -28,13 +29,12 @@ const shopItems = [
         cost: 15,
         startingCost: 15,
     },
-
     {
         name: "iPad",
         description: "Pls gimme an iPad!!!",
         cost: 100,
         startingCost: 100,
-    }
+    },
 ]
 
 function createShopItems() {
@@ -52,7 +52,7 @@ shopItems.forEach((item) => {
         <h3>₹{item.name}</h3>
         <p>₹{item.description}</p>
         </div>
-        <button onclick="buyItem('₹(item.name)')">
+        <button onclick="buyItem('₹{item.name}')">
             Buy for ₹{item.cost}
         </button>
     `;
