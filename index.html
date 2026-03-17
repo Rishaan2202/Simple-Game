@@ -10,12 +10,20 @@
 
     <main class = "game-layout">
 
-        <aside class="stats-panel">
-            <h3>Money: ₹<span id="click-count">0</span></h3>
+        <aside class="stats-panel-money">
+            <h3>Money:₹<span id="click-count">0</span></h3>
         </aside>
+
+        <div class="stats-panel">
+                <h3>Items Owned:</h3>
+                <ul id="items-owned-list"></ul>
+        </div>
 
         <section class="game-area"> 
             <button id="click-button">Click me!</button>
+        </section>
+
+        <section class="reset-button">
             <button id="reset-button">Reset</button>
         </section>
 
