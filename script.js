@@ -22,6 +22,8 @@ resetButton.addEventListener('click', resetGame);
 
 
 //Shop
+const shopContainer = document.querySelector('.shop-panel');
+
 const shopItems = [
     {
         name: "Money",
@@ -37,11 +39,23 @@ const shopItems = [
     },
 ]
 
+function buyItem(itemName) {
+    const item = shopItems.find((item) => `₹${item.name}` === itemName);
+    if (totalClickCount >= item.cost) {
+        totalClickCount -= item.cost;
+        count.textContent = totalClickCount;
+        item.cost = Math.floor(item.cost * 1.5);
+        createShopItems();
+        alert(`You bought ${item.name}!`);
+    } else {
+        alert("Not enough money!");
+    }
+}
+
 function createShopItems() {
     document.querySelectorAll('.shop-item').forEach((element) => {
         element.remove();
 });
-}
 
 shopItems.forEach((item) => {
     const shopItem = document.createElement ('div');
@@ -49,13 +63,16 @@ shopItems.forEach((item) => {
 
     shopItem.innerHTML = `
         <div>
-        <h3>₹{item.name}</h3>
-        <p>₹{item.description}</p>
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
         </div>
-        <button onclick="buyItem('₹{item.name}')">
-            Buy for ₹{item.cost}
+        <button onclick="buyItem('₹${item.name}')">
+            Buy for ₹${item.cost}
         </button>
     `;
 
     shopContainer.appendChild(shopItem);
 });
+}
+
+createShopItems();
