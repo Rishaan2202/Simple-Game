@@ -44,6 +44,12 @@ const shopItems = [
         cost: 50,
         startingCost: 50,
     },
+    {
+        name: "Multiplier",
+        description: "Multiplies your clicks by 2!",
+        cost: 20,
+        startingCost: 20,
+    },
 ]
 
 function buyItem(itemName) {
@@ -110,3 +116,15 @@ setInterval(() => {
     }
 }, 1000);
     
+function handleButtonClick() {
+    console.log("Button was clicked");
+    const multiplierOwned = itemsOwned.find((i) => i.name === "Multiplier");
+    const multiplierCount = multiplierOwned ? multiplierOwned.amount : 0;
+
+    const clicksToAdd = totalClickCount + 1 * Math.pow(2, multiplierCount);
+    count.textContent = clicksToAdd;
+}
+
+button.addEventListener('click', function() {
+    handleButtonClick();
+});
