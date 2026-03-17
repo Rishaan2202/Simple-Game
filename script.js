@@ -3,6 +3,7 @@ const count = document.getElementById('click-count');
 const resetButton = document.getElementById('reset-button');
 
 let totalClickCount = 0;
+let itemsOwned = [];
 
 function buttonclick(){
     totalClickCount++
@@ -37,18 +38,23 @@ const shopItems = [
         cost: 100,
         startingCost: 100,
     },
+    {
+        name: "Auto-Clicker",
+        description: "Automatically clicks for you every second!",
+        cost: 50,
+        startingCost: 50,
+    },
 ]
 
 function buyItem(itemName) {
-    const item = shopItems.find((item) => `₹${item.name}` === itemName);
+    let item = shopItems.find((i) => i.name === itemName);
     if (totalClickCount >= item.cost) {
         totalClickCount -= item.cost;
         count.textContent = totalClickCount;
-        item.cost = Math.floor(item.cost * 1.5);
         createShopItems();
-        alert(`You bought ${item.name}!`);
+        processItemPurchase(item);
     } else {
-        alert("Not enough money!");
+        alert(`You don't have enough money to buy ${item.name}!`);
     }
 }
 
@@ -66,7 +72,7 @@ shopItems.forEach((item) => {
         <h3>${item.name}</h3>
         <p>${item.description}</p>
         </div>
-        <button onclick="buyItem('₹${item.name}')">
+        <button onclick="buyItem('${item.name}')">
             Buy for ₹${item.cost}
         </button>
     `;
@@ -76,3 +82,31 @@ shopItems.forEach((item) => {
 }
 
 createShopItems();
+
+function processItemPurchase(item){
+let amount = 1;
+
+
+const itemInArray = itemsOwned.find((obj) => obj.name === item.name);
+if (itemInArray) {
+    itemInArray.amount++;
+    console.log(`You already had ${item.name}, added 1 more!`);
+    alert(`You already had ${item.name}, added 1 more!`);
+    amount = itemInArray.amount;
+}
+else {
+    itemsOwned.push({name: item.name, amount: 1});
+    console.log(`You bought ${item.name}, Yay!`);
+    alert(`You bought ${item.name}, Yay!`);
+}
+}
+
+setInterval(() => {
+    const autoClicker = itemsOwned.find((i) => i.name === "Auto-Clicker");
+    if (autoClicker) {
+        for (let i = 0; i < autoClicker.amount; i++) {
+            buttonclick(document.getElementById('click-button'));
+        }
+    }
+}, 1000);
+    
