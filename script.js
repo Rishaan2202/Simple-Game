@@ -100,3 +100,13 @@ else {
     alert(`You bought ${item.name}, Yay!`);
 }
 }
+
+setInterval(() => {
+    const autoClicker = itemsOwned.find((i) => i.name === "Auto-Clicker");
+    if (autoClicker) {
+        for (let i = 0; i < autoClicker.amount; i++) {
+            buttonclick(document.getElementById('click-button'));
+        }
+    }
+}, 1000);
+    
