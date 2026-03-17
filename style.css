@@ -77,8 +77,14 @@ h3{
     align-items: center;
     margin-bottom: 10px;
     padding: 8px;
-    border-radius: 3px;
+    border-radius: 8px;
     background-color: #E3DBBB;  
+}
+
+.shop-item:hover{
+    background-color: #F8F3E1;
+    scale: 1.1;
+    transition: all 0.2s ease-in-out;
 }
 
 .shop-item h3{
@@ -98,8 +104,22 @@ h3{
     background-color: #C9B380;
     border: none;
     padding: 6px 12px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+.shop-item button:hover{
+    background-color: #BFA06E;
+    cursor: pointer;
+    scale: 1.1;
+    transition: all 0.2s ease-in-out;
+}
+
+.shop-item button:active{
+    background-color: #C9B380;
+    cursor: pointer;
+    scale: 0.9;
+    transition: all 0.1s ease-in-out;
 }
