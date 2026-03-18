@@ -19,19 +19,6 @@ h3{
     font-family: 'Courier New', Courier, monospace;
 }
 
-#click-button:hover{
-    background-color: #F8F3E1;
-    cursor: pointer;
-    scale: 1.1;
-    transition: all 0.2s ease-in-out;
-}
-
-#click-button:active{
-    background-color: #E3DBBB;
-    cursor: pointer;
-    scale: 0.9;
-    transition: all 0.1s ease-in-out;
-}
 
 #reset-button{
     background-color: #E3DBBB;
@@ -64,13 +51,6 @@ h3{
     gap: 20px;
     padding: 20px;
     align-items: start;
-}
-
-.game-area{
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .shop-item{
@@ -134,7 +114,7 @@ h3{
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     height: 50px;
-    width: 250px;
+    width: 270px;
 }
 
 .stats-panel-money h3{
@@ -144,14 +124,19 @@ h3{
 
 .stats-panel{
     background-color: #E3DBBB;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     height: fit-content;
-    width: 250px;
+    width: fit-content;
     margin-top: 100px;
-    margin-left: -316px;
+    margin-left: -330px;
+}
+
+.stats-panel h3{
+    font-size: 2rem;
+    margin-top: 10px;
 }
 
 .shop-panel{
@@ -169,6 +154,31 @@ h3{
 }
 
 #click-button{
-    display: block;
-    margin: 0 auto;
+    height: 560px;
+    width: 620px;
+    border-color: #41431B;
+    border-style: dashed;
+    border-radius: 10px;
+    margin-left: 50px;
+    background-color: #AEB784;
+}
+
+#click-button:hover{
+    cursor: pointer;
+}
+
+.game-area{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -358px;
+}
+
+.stats-panel ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
 }
