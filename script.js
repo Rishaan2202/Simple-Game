@@ -128,3 +128,25 @@ function handleButtonClick() {
 button.addEventListener('click', function() {
     handleButtonClick();
 });
+
+function saveProgress() {
+    localStorage.setItem('totalClickCount', totalClickCount);
+    localStorage.setItem('itemsOwned', JSON.stringify(itemsOwned));
+}
+
+function loadProgress() {
+    const savedClickCount = localStorage.getItem('totalClickCount');
+    const savedItemsOwned = localStorage.getItem('itemsOwned');
+
+    if (savedClickCount) {
+        totalClickCount = parseInt(savedClickCount);
+        count.textContent = totalClickCount;
+    }
+
+    if (savedItemsOwned) {
+        itemsOwned = JSON.parse(savedItemsOwned);
+    }
+}
+
+saveProgress();
+loadProgress();
